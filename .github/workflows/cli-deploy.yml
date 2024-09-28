@@ -86,7 +86,7 @@ jobs:
         id: get-hostname
         with:
           inlineScript: |
-            SWA_HOSTNAME=$(az staticwebapp environment list -n $SwaName -g $ResourceGroup --query "[?contains(hostname,'${{ steps.swa-env.outputs.ENVIRONMENT }}')].hostname " -o tsv)
+            SWA_HOSTNAME=$(az staticwebapp environment list -n $SwaName -g $ResourceGroup --query "[?contains(hostname,'${{ steps.swa-env.outputs.ENVIRONMENT }}')].hostname " -o tsv) --api-language dotnet-isolated --api-version 8.0
             echo $SWA_HOSTNAME
             echo SWA_HOSTNAME=$SWA_HOSTNAME >> $GITHUB_OUTPUT
 
