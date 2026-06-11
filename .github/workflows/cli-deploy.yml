@@ -3,14 +3,14 @@ name: Build and Deploy Application
 on:
   push:
     branches:
-      - main
+      - main1
     paths-ignore:
       - '.github/workflows/IaC.yml'
       - '.github/workflows/custom-domain.yml'
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-      - main
+      - main1
 
 env:
   ResourceGroup: sandbox-rg
